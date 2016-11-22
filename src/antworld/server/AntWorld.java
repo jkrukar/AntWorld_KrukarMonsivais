@@ -65,7 +65,7 @@ public class AntWorld implements ActionListener
 
     //********************* Note On map replacement  **************************
     //The map must have at least a one pixel a boarder of water: LandType.WATER.getColor.
-    BufferedImage map = Util.loadImage("AntWorld.png", window);
+    BufferedImage map = Util.loadImage("AntTestWorld2.png", window);
     worldWidth = map.getWidth();
     worldHeight = map.getHeight();
 
@@ -221,6 +221,7 @@ public class AntWorld implements ActionListener
     world = new Cell[worldWidth][worldHeight];
     for (int x = 0; x < worldWidth; x++)
     {
+      System.out.println("readingAntWorld... x=" + x); //REMOVE
       for (int y = 0; y < worldHeight; y++)
       {
         int rgb = (map.getRGB(x, y) & 0x00FFFFFF);
@@ -253,6 +254,8 @@ public class AntWorld implements ActionListener
         world[x][y] = new Cell(landType, height, x, y);
       }
     }
+
+    System.out.println("Done reading AntWorldMap");
 
     // for (Nest nest : nestList)
     // {
