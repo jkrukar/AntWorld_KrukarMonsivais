@@ -221,7 +221,6 @@ public class AntWorld implements ActionListener
     world = new Cell[worldWidth][worldHeight];
     for (int x = 0; x < worldWidth; x++)
     {
-      System.out.println("readingAntWorld... x=" + x); //REMOVE
       for (int y = 0; y < worldHeight; y++)
       {
         int rgb = (map.getRGB(x, y) & 0x00FFFFFF);
@@ -254,8 +253,6 @@ public class AntWorld implements ActionListener
         world[x][y] = new Cell(landType, height, x, y);
       }
     }
-
-    System.out.println("Done reading AntWorldMap");
 
     // for (Nest nest : nestList)
     // {
